@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: AI Model Deployment API
+  version: 1.0.0
+paths:
+  /predict:
+    get:
+      summary: Get prediction from the deployed model
+      parameters:
+        - in: query
+          name: input
+          schema:
+            type: number
+          required: true
+          description: Input value for prediction
+      responses:
+        '200':
+          description: Successful prediction
+        '400':
+          description: Invalid input
+        '500':
+          description: Server error
